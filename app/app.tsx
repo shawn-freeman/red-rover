@@ -3,7 +3,7 @@
 import React, { useMemo, useState } from "react";
   
 export default function App() {
-  const [inputText, setInput ] = useState('');
+  const [inputText, setInput ] = useState('(id, name, email, type(id, name, customFields(c1, c2, c3)), externalId)');
 
   return (
     <div className="p-4">
@@ -20,6 +20,21 @@ export default function App() {
         />
       </label>
       
+      <div className="grid md:grid-cols-2 gap-6">
+        <div>
+          <h2>Original Order</h2>
+          <section className="border p-4">
+              <div>{inputText}</div>
+          </section>
+        </div>        
+
+        <div>
+          <h2>Alphabetical Order</h2>
+          <section className="border p-4">
+              <div>{inputText}</div>
+          </section>
+        </div>
+      </div>
     </div>
   );
 }
