@@ -1,10 +1,11 @@
 'use client';
 
 import React, { useMemo, useState } from "react";
+import usePuzzleStore from "./stores/puzzleStore";
   
 export default function App() {
-  const [inputText, setInput ] = useState('(id, name, email, type(id, name, customFields(c1, c2, c3)), externalId)');
-
+  const { inputText, setInput } = usePuzzleStore();
+  
   return (
     <div className="p-4">
       <h1>Red Rover Code Puzzle </h1>
