@@ -1,11 +1,12 @@
 'use client';
 
-import React, { useMemo, useState } from "react";
 import usePuzzleStore from "./stores/puzzleStore";
+import { convert, sortAlphabetical } from "./utils";
+import { TreeList } from "./treelist";
   
 export default function App() {
   const { inputText, setInput } = usePuzzleStore();
-  
+
   return (
     <div className="p-4">
       <h1>Red Rover Code Puzzle </h1>
@@ -25,14 +26,14 @@ export default function App() {
         <div>
           <h2>Original Order</h2>
           <section className="border p-4">
-              <div>{inputText}</div>
+              <div><TreeList nodes={convert(inputText)} /></div>
           </section>
         </div>        
 
         <div>
           <h2>Alphabetical Order</h2>
           <section className="border p-4">
-              <div>{inputText}</div>
+              <div><TreeList nodes={sortAlphabetical(convert(inputText))} /></div>
           </section>
         </div>
       </div>

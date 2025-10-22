@@ -11,22 +11,8 @@ export function convert(input: string, indent = 0): Node[] {
   return nodes;
 }
 
-// export function sort(nodes:Node[]): Node[]
-// {
-//   return nodes.sort((nA, nB) => {
-//     return nA.name.localeCompare(nB.name, undefined, { sensitivity: "accent"}) 
-//   });
-//   // for(let node of nodes){
-//   //   if(node.children && node.children.length > 0){
-//   //     node.children = sort(node.children);
-//   //   }
-//   // }
-// }
-
 export function sortAlphabetical(nodes:Node[]): Node[]
 {
-  console.log(`Sorting: ${nodes} Indent: ${nodes[0].indent}`);
-  
   nodes.sort((nA, nB) => {
     return nA.name.localeCompare(nB.name, undefined, { sensitivity: "accent"}) 
   });

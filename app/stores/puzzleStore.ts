@@ -2,9 +2,6 @@ import { create } from 'zustand';
 
 export type Store = {
   inputText:string;
-  output:string;
-  alphaOutput:string;
-  error:string,
 };
 
 export type Action = {
@@ -13,9 +10,6 @@ export type Action = {
 
 const initialStoreState:Store = {
   inputText: '(id, name, email, type(id, name, customFields(c1, c2, c3)), externalId)',
-  output: '',
-  alphaOutput: '', 
-  error: '',
 }
 
 const createPuzzleStore = (initState: Store = initialStoreState) => {
