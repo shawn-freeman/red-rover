@@ -1,5 +1,3 @@
-import { Store } from "./stores/puzzleStore";
-
 export type Node = { name: string; children?: Node[], indent:number };
 
 export function convert(input: string, indent = 0): Node[] {
